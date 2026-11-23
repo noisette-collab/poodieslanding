@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poodies | Clean Bathrooms Everywhere</title>
+  <meta name="description" content="Poodies – Find and rate clean bathrooms in bars, restaurants and places around the world. Community for travelers." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --header-bg: #1a2332;
+      --card: #f5f3ff;
+      --text: #2d3748;
+      --muted: #718096;
+      --teal: #59adb0;
+      --teal-hover: #4a9a9d;
+      --lavender: #c4b5fd;
+      --lavender-soft: #ede9fe;
+      --border: #e9d5ff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .top-header {
+      background: var(--header-bg);
+      color: white;
+      padding: 16px 0;
+    }
+    .top-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-img {
+      height: 36px;
+      width: auto;
+    }
+    .big-logo-img {
+      width: min(90%, 640px);
+      height: auto;
+      margin: 10px auto 30px;
+      display: block;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .login-btn {
+      background: var(--teal);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .login-btn:hover { background: var(--teal-hover); }
+    .lang-switch {
+      display: flex;
+      gap: 6px;
+    }
+    .lang-switch button {
+      background: transparent;
+      border: 1px solid #4a5568;
+      color: #e2e8f0;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .lang-switch button.active {
+      background: var(--teal);
+      color: white;
+      border-color: var(--teal);
+    }
+    .container { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+    .hero {
+      text-align: center;
+      padding: 80px 0 60px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: #1a202c;
+    }
+    .hero p.sub {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 32px;
+    }
+    .cta-form {
+      display: flex;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cta-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      background: #fafafa;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .cta-form button {
+      padding: 14px 24px;
+      background: var(--teal);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .cta-form button:hover { background: var(--teal-hover); }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      padding: 40px 0 80px;
+    }
+    .feature {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(89, 173, 176, 0.08);
+    }
+    .feature h3 { margin-bottom: 8px; font-size: 1.15rem; color: #1a202c; }
+    .feature p { color: var(--muted); font-size: 0.95rem; }
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--muted);
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--teal); text-decoration: none; }
+    .hidden { display: none; }
+    @media (max-width: 600px) {
+      .cta-form { flex-direction: column; }
+      .cta-form button { width: 100%; }
+      .top-header .container { flex-wrap: wrap; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-header">
+    <div class="container">
+      <img src="poodies-logo-header.png" alt="Poodies" class="logo-img" />
+      <div class="header-actions">
+        <div class="lang-switch">
+          <button id="btn-es" class="active" onclick="setLang('es')">ES</button>
+          <button id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+        <button class="login-btn" onclick="alert('Login próximamente / Login coming soon')">Login</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Spanish -->
+    <div id="content-es">
+      <section class="hero">
+        <img src="poodies-logo-main.png" alt="Poodies" class="big-logo-img" />
+        <p class="sub">Poodies es la comunidad de viajeros que valoran y comparten la limpieza de los baños de bares, restaurantes y locales de todo el mundo.</p>
+        <form class="cta-form" onsubmit="handleSubmit(event, 'es')">
+          <input type="email" placeholder="Tu email" required />
+          <button type="submit">Únete a la lista</button>
+        </form>
+      </section>
+      <section class="features">
+        <div class="feature">
+          <h3>Valora baños</h3>
+          <p>Limpieza, papel, jabón, olor y más. Opiniones reales de gente que ya ha estado allí.</p>
+        </div>
+        <div class="feature">
+          <h3>Añade lugares</h3>
+          <p>Comparte los baños limpios que descubras cuando viajas o sales. Ayuda a otros.</p>
+        </div>
+        <div class="feature">
+          <h3>Comunidad global</h3>
+          <p>Útil para viajeros frecuentes y para cualquiera que quiera evitar sorpresas desagradables.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- English -->
+    <div id="content-en" class="hidden">
+      <section class="hero">
+        <img src="poodies-logo-main.png" alt="Poodies" class="big-logo-img" />
+        <p class="sub">Poodies is the community of travelers who rate and share the cleanliness of bathrooms in bars, restaurants and venues worldwide.</p>
+        <form class="cta-form" onsubmit="handleSubmit(event, 'en')">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit">Join the waitlist</button>
+        </form>
+      </section>
+      <section class="features">
+        <div class="feature">
+          <h3>Rate bathrooms</h3>
+          <p>Cleanliness, toilet paper, soap, smell and more. Real opinions from people who have been there.</p>
+        </div>
+        <div class="feature">
+          <h3>Add places</h3>
+          <p>Share the clean bathrooms you discover when you travel or go out. Help others.</p>
+        </div>
+        <div class="feature">
+          <h3>Global community</h3>
+          <p>Useful for frequent travelers and anyone who wants to avoid unpleasant surprises.</p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p id="footer-text">Próximamente · Global · <a href="https://instagram.com/poodiesbcn" target="_blank">Instagram</a></p>
+    </footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.getElementById('content-es').classList.toggle('hidden', lang !== 'es');
+      document.getElementById('content-en').classList.toggle('hidden', lang !== 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('footer-text').innerHTML = lang === 'es'
+        ? 'Próximamente · Global · <a href="https://instagram.com/poodiesbcn" target="_blank">Instagram</a>'
+        : 'Coming soon · Global · <a href="https://instagram.com/poodiesbcn" target="_blank">Instagram</a>';
+      document.documentElement.lang = lang;
+    }
+
+    function handleSubmit(e, lang) {
+      e.preventDefault();
+      const email = e.target.querySelector('input').value;
+      // Placeholder: replace with your real form endpoint later (e.g. Cloudflare Worker, Formspree, etc.)
+      alert(lang === 'es'
+        ? `¡Gracias! Te avisaremos cuando lancemos Poodies. (${email})`
+        : `Thanks! We'll notify you when we launch Poodies. (${email})`);
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
